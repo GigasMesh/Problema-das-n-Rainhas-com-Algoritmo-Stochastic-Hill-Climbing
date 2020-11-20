@@ -13,14 +13,13 @@ class Board(object):
         self.setQueens()
 
         # cria um dicionário para armazenar o custo individual por rainha
-        self.eachH = {queen+1:0 for queen in [col for col in np.arange(n)]}
+        self.eachH = {queen+1:0 for queen in range(n)}
         self.setH()
       
     # realiza a criação aleatória das rainhas pelo tabuleiro
     def createQueens(self):
         n= self.n
-        self.queens = list(zip(np.random.randint(0,n,n), 
-                               [col for col in np.arange(n)]))
+        self.queens = list(zip(np.random.randint(0,n,n), range(n)))
     
     '''
     TO-DO
