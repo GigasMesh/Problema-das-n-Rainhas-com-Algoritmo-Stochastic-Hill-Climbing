@@ -15,7 +15,12 @@ class Board(object):
         # cria um dicionário para armazenar o custo individual por rainha
         self.eachH = {queen+1:0 for queen in range(n)}
         self.setH()
-      
+    
+    def resetBoard(self):
+        self.resetPos()
+        self.setQueens()
+        self.setH()
+        
     # realiza a criação aleatória das rainhas pelo tabuleiro
     def createQueens(self):
         n= self.n
@@ -31,7 +36,7 @@ class Board(object):
             self.pos[queen][col] = col+1
 
     # reinicia o tabuleiro
-    def resetBoard(self):
+    def resetPos(self):
         n = self.n
         self.pos = np.zeros((n, n))
     
